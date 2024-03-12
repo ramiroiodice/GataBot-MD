@@ -70,7 +70,7 @@ nuevoPrecio = 50
 let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *PRECIO ANTERIOR:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *NUEVO PRECIO:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *PRECIO:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
 let info = `*« FANTASÍA RPG »*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *NOMBRE:* ${dato.name}\n✓ *ESTADO:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *CLASE:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *INFO:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *ESTADO:* ${estado}`
 info += `\n\n${estado === 'LIBRE' ? '_RESPONDE A ESTE MENSAJE CON "C", "🛒", O "🐱" PARA COMPRAR_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
-id_message = (await conn.sendFile(m.chat, dato.url, 'FantasyGames-Error.jpg', info.trim(), fkontak, true, {
+id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
