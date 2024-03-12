@@ -41,7 +41,7 @@ idUsuarioExistente = Object.keys(usuarioExistente)[0];
 nombreImagen = data.infoImg.find(personaje => personaje.code === codigoActual)?.name
 
 if (nombreImagen) {
-estado = `Vendido\n✓ *Comprado por: ${conn.getName(idUsuarioExistente)}*`
+estado = `VENDIDO\n✓ *COMPRADO POR: ${conn.getName(idUsuarioExistente)}*`
 }}
 
 const personaje = dato.name
@@ -67,9 +67,9 @@ if (nuevoPrecio < 50) {
 nuevoPrecio = 50
 }
     
-let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *Precio anterior:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *Nuevo Precio:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *Precio:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
-let info = `*⛱️ FANTASÍA RPG ⛱️*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Nombre:* ${dato.name}\n✓ *Origen:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *Clase:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *Tipo:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Estado:* ${estado}`
-info += `\n\n${estado === 'Libre' ? '_Responde a este mensaje con "c", "🛒", o "🐱" para comprarlo_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
+let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *PRECIO ANTERIOR:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *NUEVO PRECIO:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *PRECIO:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
+let info = `*« FANTASÍA RPG »*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Nombre:* ${dato.name}\n✓ *Origen:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *CLASE:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *INFO:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *ESTADO:* ${estado}`
+info += `\n\n${estado === 'Libre' ? '_RESPONDE A ESTE MENSAJE CON "C", "🛒", O "🐱" PARA COMPRAR_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
 id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
 'forwardingScore': 200,
@@ -330,7 +330,7 @@ return minutes + " m y " + seconds + " s "
 
 export function listaAvisos(usedPrefix, personaje) {
 const avisos = [
-`> 🤩 ¡Agrega un personaje ahora! usando *${usedPrefix}fyagregar* o *${usedPrefix}fyadd*`,
+`> ✿ ¡Agrega un personaje ahora! usando *${usedPrefix}fygamesagregar* o *${usedPrefix}fy2add*`,
 `> 👀 *¿Qué tal ${personaje}?* ¡Califica!\n_Responde a este mensaje con:_\n*"${likeEmojisArrays.getRandom()}", "${dislikeEmojisArrays.getRandom()}", o "${superlikeEmojisArrays.getRandom()}"*\n\n> ⚠️ *Solo puede calificar si ha comprado mínimo un Personaje*`,
 `> *¿Sabías que puedes cambiar un Personaje por tiempo premium 🎟️?*\n_¡Inténtalo! usa *${usedPrefix}fycambiar* o *${usedPrefix}fychange*_`,
 `> ¡Para ser un Pro 😎 en *RPG Fantasy* visita la guía 📜!\n*Comienza a explorar usando:*\n\`${usedPrefix}fyguia o ${usedPrefix}fyguide\``,
