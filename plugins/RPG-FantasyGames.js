@@ -68,9 +68,9 @@ nuevoPrecio = 50
 }
     
 let txtNewPrice = nuevoPrecio !== dato.price ? `\n✓ *PRECIO ANTERIOR:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n✓ *NUEVO PRECIO:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*` : `\n✓ *PRECIO:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
-let info = `*« FANTASÍA RPG »*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *Nombre:* ${dato.name}\n✓ *Origen:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *CLASE:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *INFO:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *ESTADO:* ${estado}`
-info += `\n\n${estado === 'Libre' ? '_RESPONDE A ESTE MENSAJE CON "C", "🛒", O "🐱" PARA COMPRAR_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
-id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
+let info = `*« FANTASÍA RPG »*\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *NOMBRE:* ${dato.name}\n✓ *ESTADO:* ${dato.desp}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*${txtNewPrice}\n✓ *CLASE:* ${dato.class}\n✓ *ID:* \`\`\`${codigoActual}\`\`\`\n✓ *INFO:* ${dato.type}\n*⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯*\n✓ *ESTADO:* ${estado}`
+info += `\n\n${estado === 'LIBRE' ? '_RESPONDE A ESTE MENSAJE CON "C", "🛒", O "🐱" PARA COMPRAR_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
+id_message = (await conn.sendFile(m.chat, dato.url, 'FantasyGames-Error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
 'forwardingScore': 200,
 'isForwarded': false,
@@ -229,7 +229,7 @@ if (idUsuarioExistente) {
 let No_compra = `*${nombreImagen}*YA FUE COMPRADO POR*${conn.getName(idUsuarioExistente)}*`
 if (usuarioExistente) return conn.reply(m.chat, No_compra, m, fake)
 }
-fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 COMPLETA MISIONES RPG `, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
+fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 COMPLETA MISIONES RPG`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
 conn.reply(m.chat, `Te falta *${cantidadFaltante} ${rpgshop.emoticon('money')}* para comprar a *${dato.name}*\n\n*Actualmente tienes ${user.money} ${rpgshop.emoticon('money')}*`, m, fake)
 } else {
 response = await fetch(jsonURL)
