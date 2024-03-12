@@ -84,11 +84,11 @@ thumbnailUrl: pp
 }}
 }, { caption: 'imagen_info' })).key.id
 } else {
-console.error('NO SE ENCONTRARON IMAGENES.')
-conn.sendMessage(m.chat, 'ERROR AL PROCESAR LOS DATOS.', { quoted: m })
+console.error('No se han encontrado imágenes.')
+conn.sendMessage(m.chat, 'Error al obtener o procesar los datos.', { quoted: m })
 }} catch (error) {
-console.error('ERROR AL PROCESAR LOS DATOS: ', error)
-conn.sendMessage(m.chat, 'ERROR AL PROCESAR LA SOLICITUD.', { quoted: m })
+console.error('Error al obtener o procesar los datos:  ', error)
+conn.sendMessage(m.chat, 'Error al procesar la solicitud.', { quoted: m })
 }
 
 handler.before = async (m) => {
@@ -135,8 +135,8 @@ status: false,
 ]}
 fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')
 emojiSaved = emojiAntes?.emoji    
-const cambioEmojiMessage = `HAS DECIDIDO CAMBIAR TU CALIFICACION ANTERIOR *"${emojiSaved}"* por *"${emoji}"* para *${nombrePersonaje}*.`
-const errorMessage = `*${nombrePersonaje}*YA FUE CALIFICADO POR TU CON *"${emoji}"*`
+const cambioEmojiMessage = `Has decidido cambiar tú calificación anterior *"${emojiSaved}"* por *"${emoji}"* para *${nombrePersonaje}*.`
+const errorMessage = `*${nombrePersonaje}* ya fue calificado por ti con *"${emoji}"*`
 if (emojiAntes) {
 function determinarEmoji(voto) {
 if (voto.like) {
@@ -224,9 +224,9 @@ const id = Object.keys(user)[0]
 const fantasy = user[id].fantasy
 return fantasy.some(personaje => personaje.id === codigoActual)
 })
-fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 COMPRA OTRO PERSONAJE`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }        
+fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 Compra otro personaje`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }        
 if (idUsuarioExistente) {
-let No_compra = `*${nombreImagen}*YA FUE COMPRADO POR*${conn.getName(idUsuarioExistente)}*`
+let No_compra = `*${nombreImagen}* ya fue comprado por *${conn.getName(idUsuarioExistente)}*`
 if (usuarioExistente) return conn.reply(m.chat, No_compra, m, fake)
 }
 fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 COMPLETA MISIONES RPG`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
