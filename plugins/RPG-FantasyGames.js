@@ -28,7 +28,7 @@ if (fs.existsSync(fantasyDBPath)) {
 const data = fs.readFileSync(fantasyDBPath, 'utf8')
 fantasyDB = JSON.parse(data)
 }
-estado = 'Libre'
+estado = 'LIBRE'
 const codigoActual = dato.code
 const usuarioExistente = fantasyDB.find(user => {
 const id = Object.keys(user)[0]
@@ -84,11 +84,11 @@ thumbnailUrl: pp
 }}
 }, { caption: 'imagen_info' })).key.id
 } else {
-console.error('No se han encontrado imágenes.')
-conn.sendMessage(m.chat, 'Error al obtener o procesar los datos.', { quoted: m })
+console.error('NO SE ENCONTRARON IMAGENES.')
+conn.sendMessage(m.chat, 'ERROR AL PROCESAR LOS DATOS.', { quoted: m })
 }} catch (error) {
-console.error('Error al obtener o procesar los datos: ', error)
-conn.sendMessage(m.chat, 'Error al procesar la solicitud.', { quoted: m })
+console.error('ERROR AL PROCESAR LOS DATOS: ', error)
+conn.sendMessage(m.chat, 'ERROR AL PROCESAR LA SOLICITUD.', { quoted: m })
 }
 
 handler.before = async (m) => {
@@ -135,8 +135,8 @@ status: false,
 ]}
 fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')
 emojiSaved = emojiAntes?.emoji    
-const cambioEmojiMessage = `Has decidido cambiar tú calificación anterior *"${emojiSaved}"* por *"${emoji}"* para *${nombrePersonaje}*.`
-const errorMessage = `*${nombrePersonaje}* ya fue calificado por ti con *"${emoji}"*`
+const cambioEmojiMessage = `HAS DECIDIDO CAMBIAR TU CALIFICACION ANTERIOR *"${emojiSaved}"* por *"${emoji}"* para *${nombrePersonaje}*.`
+const errorMessage = `*${nombrePersonaje}*YA FUE CALIFICADO POR TU CON *"${emoji}"*`
 if (emojiAntes) {
 function determinarEmoji(voto) {
 if (voto.like) {
@@ -195,7 +195,7 @@ break
 }
 fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')}
 } else {
-const confirmationMessage = `*${conn.getName(m.sender)}* ha calificado a *${nombrePersonaje}* con *"${emoji}"*\n\n😉 _¡Sigue calificando a más personajes, es gratis!_`
+const confirmationMessage = `*${conn.getName(m.sender)}* ha calificado a *${nombrePersonaje}* con *"${emoji}"*\n\n😉 _¡SIGUE CALIFICANDO Y TE DOY PENIS BRO, ES GRATIS!_`
 conn.reply(m.chat, confirmationMessage, m)
 let userInDB = fantasyDB.find(userEntry => userEntry[userId])
 if (userInDB) {
@@ -224,12 +224,12 @@ const id = Object.keys(user)[0]
 const fantasy = user[id].fantasy
 return fantasy.some(personaje => personaje.id === codigoActual)
 })
-fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 Compra otro personaje`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }        
+fake = { contextInfo: { externalAdReply: { title: `¡Ese Personaje ya fue comprado!`, body: `😅 COMPRA OTRO PERSONAJE`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }        
 if (idUsuarioExistente) {
-let No_compra = `*${nombreImagen}* ya fue comprado por *${conn.getName(idUsuarioExistente)}*`
+let No_compra = `*${nombreImagen}*YA FUE COMPRADO POR*${conn.getName(idUsuarioExistente)}*`
 if (usuarioExistente) return conn.reply(m.chat, No_compra, m, fake)
 }
-fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 Completa misiones del RPG`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
+fake = { contextInfo: { externalAdReply: { title: `¡Insuficientes ${rpgshop.emoticon('money')}!`, body: `😼 COMPLETA MISIONES RPG `, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
 conn.reply(m.chat, `Te falta *${cantidadFaltante} ${rpgshop.emoticon('money')}* para comprar a *${dato.name}*\n\n*Actualmente tienes ${user.money} ${rpgshop.emoticon('money')}*`, m, fake)
 } else {
 response = await fetch(jsonURL)
@@ -257,7 +257,7 @@ fake = { contextInfo: { externalAdReply: { title: `😊 Ya fue comprado antes`, 
 const mensaje_ = `El personaje *${nombrePersonaje}* ya es tuyo!!`
 conn.reply(m.chat, mensaje_, m, fake)
 } else {
-fake = { contextInfo: { externalAdReply: { title: `❌ No puedes comprar esto: ${nombrePersonaje}`, body: `🙂 ¡Compra otro personaje!`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
+fake = { contextInfo: { externalAdReply: { title: `❌ No puedes comprar esto: ${nombrePersonaje}`, body: `🙂 ¡COMPRA OTROS PERSONAJES!`, sourceUrl: accountsgb.getRandom(), thumbnailUrl: gataMenu.getRandom() } } }
 const mensaje = `Este personaje *${nombrePersonaje}* está reclamado por *${nombreUsuario}*`
 conn.reply(m.chat, mensaje, m, fake)
         
