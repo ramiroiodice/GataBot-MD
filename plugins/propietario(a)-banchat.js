@@ -1,5 +1,5 @@
 /*let handler = async (m) => {
-global.db.data.chats[m.chat].isBanned = false
+global.db.data.chats[m.chat].isBanned = true
 m.reply(`${eg}𝘦𝘭 𝘤𝘩𝘢𝘵 𝘧𝘶𝘦 𝘥𝘦𝘴𝘣𝘢𝘯𝘦𝘢𝘥𝘢, 𝘺𝘢 𝘱𝘶𝘦𝘥𝘦𝘯 𝘶𝘴𝘢𝘳𝘮𝘦.`)
 }
 handler.help = ['unbanchat2']
