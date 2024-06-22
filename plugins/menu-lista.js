@@ -112,7 +112,7 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 *╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
 ┃
 ┃Ⓜ️ _*MENÚ COMPLETO*_ Ⓜ️
-┃➺ _${usedPrefix}menu | allmenu_
+┃➺ _${usedPrefix}menucompleto | menu_
 ┃
 ┃🔊 _*MENÚ DE AUDIOS*_ 🔊
 ┃➺ _${usedPrefix}menuaudio | menuaudios_
@@ -229,7 +229,7 @@ rows: [
 {title: lenguajeGB['smsLista3'](), rowId: `${usedPrefix}donar`},
 {title: lenguajeGB['smsLista4'](), rowId: `${usedPrefix}ping`},
 {title: lenguajeGB['smsLista5'](), rowId: `${usedPrefix}infomenu`},
-{title: lenguajeGB['smsLista6'](), rowId: `${usedPrefix}allmenu`},
+{title: lenguajeGB['smsLista6'](), rowId: `${usedPrefix}menu`},
 {title: lenguajeGB['smsLista7'](), rowId: `${usedPrefix}instalarbot`},
 {title: lenguajeGB['smsLista8'](), rowId: `${usedPrefix}serbot`},
 {title: lenguajeGB['smsLista9'](), rowId: `${usedPrefix}términos`, description: '\n'}
