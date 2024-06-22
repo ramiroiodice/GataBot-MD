@@ -1,27 +1,35 @@
-import { tmpdir } from 'os'
-import path, { join } from 'path'
+import {tmpdir} from 'os';
+import path, {join} from 'path';
 import {
-readdirSync,
-statSync,
-unlinkSync,
-existsSync,
-readFileSync,
-watch
-} from 'fs'
-let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => { 
+  readdirSync,
+  statSync,
+  unlinkSync,
+  existsSync,
+  readFileSync,
+  watch,
+} from 'fs';
 
-conn.reply(m.chat, `${eg} *𝘼𝙍𝘾𝙃𝙄𝙑𝙊𝙎 𝘿𝙀 𝙇𝘼 𝘾𝘼𝙍𝙋𝙀𝙍𝙏𝘼 𝙏𝙈𝙋 𝙁𝙐𝙀𝙍𝙊𝙉 𝙀𝙇𝙄𝙈𝙄𝙉𝘼𝘿𝙊𝙎.*\n\n*𝙁𝙄𝙇𝙀𝙎 𝙄𝙉 𝙏𝙃𝙀 𝙏𝙈𝙋 𝙁𝙊𝙇𝘿𝙀𝙍 𝙒𝙀𝙍𝙀 𝘿𝙀𝙇𝙀𝙏𝙀𝘿.*`, m)
 
-const tmp = [tmpdir(), join(__dirname, '../tmp')]
-const filename = []
-tmp.forEach(dirname => readdirSync(dirname).forEach(file => filename.push(join(dirname, file))))
-return filename.map(file => {
-const stats = statSync(file)
-unlinkSync(file)
-})} //NO USAR ESTE COMANDO EN HEROKU | DO NOT USE THIS COMMAND ON HEROKU
-handler.help = ['cleartmp']
-handler.tags = ['owner']
-handler.command = /^(cleartmp|cleartemp|borrartmp|eliminartmp|borrartemp|borrartemp)$/i
-handler.exp = 500
-handler.rowner = true
-export default handler
+
+
+const handler = async (m, {conn, usedPrefix: _p, __dirname, args}) => {
+  const datas = global
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.plugins.owner_cleartmp
+
+  conn.reply(m.chat, tradutor.texto1, m);
+
+  const tmp = [tmpdir(), join(__dirname, '../tmp')];
+  const filename = [];
+  tmp.forEach((dirname) => readdirSync(dirname).forEach((file) => filename.push(join(dirname, file))));
+  return filename.map((file) => {
+    const stats = statSync(file);
+    unlinkSync(file);
+  });
+};
+handler.help = ['cleartmp'];
+handler.tags = ['owner'];
+handler.command = /^(cleartmp|cleartemp)$/i;
+handler.rowner = true;
+export default handler;
