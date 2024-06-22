@@ -14,7 +14,7 @@ handler.tags = ['owner']
 handler.command = /^(chetar|ilimitado|infiniy)$/i
 handler.rowner = true
 handler.mods = false
-handler.premium = true
+handler.premium = false
 handler.group = false
 handler.private = false
 
