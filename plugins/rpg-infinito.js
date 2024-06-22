@@ -11,10 +11,10 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['cheat']
 handler.tags = ['owner']
-handler.command = /^(chetar|infiniy)$/i
+handler.command = /^(chetar | ilimitado |infiniy)$/i
 handler.rowner = true
 handler.mods = false
-handler.premium = false
+handler.premium = true
 handler.group = false
 handler.private = false
 
