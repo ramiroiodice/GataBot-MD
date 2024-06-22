@@ -112,7 +112,7 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 *╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
 ┃
 ┃Ⓜ️ _*MENÚ COMPLETO*_ Ⓜ️
-┃➺ _${usedPrefix}menucompleto | allmenu_
+┃➺ _${usedPrefix}menu | allmenu_
 ┃
 ┃🔊 _*MENÚ DE AUDIOS*_ 🔊
 ┃➺ _${usedPrefix}menuaudio | menuaudios_
@@ -178,7 +178,7 @@ await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() 
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)}}
 
-handler.command = /^(menu|menú|memu|memú|help\?)$/i
+handler.command = /^(listamenu|menú|memu|memú|help\?)$/i
 handler.register = true
 export default handler
 
