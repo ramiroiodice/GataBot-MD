@@ -6,5 +6,5 @@ handler.help = ['unbanchat'];
 handler.tags = ['owner'];
 handler.command = /^unbanchat$/i;
 handler.botAdmin = false
-handler.admin = true
+handler.admin = false
 export default handler;
