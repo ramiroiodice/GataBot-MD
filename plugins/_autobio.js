@@ -10,9 +10,8 @@ setTimeout(resolve, 2000) }) * 1000}
 let uptime = clockString(_uptime)
 let bio = `𝐆𝐚𝐭𝐚𝐁𝐨𝐭-𝐌𝐃 ║ ✿ ${uptime} ⧎ ║ ⒼⒷ 𓃠 ${[`#donar #menu #serbot #gruposgb #fantasy`, `#estado #menu #jadibot #cuentagatabot 🐈`, `#infobot #owner #ping #fy 💻 By: RamiroGB 🐈`].getRandom()}`
 await this.updateProfileStatus(bio).catch(_ => _)
-//await this.updateProfilePicture(gataImg.getRandom()).catch(_ => _)
 setting.status = new Date() * 1
-} 
+}
 export default handler
 
 function clockString(ms) {
@@ -22,4 +21,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [d, ' » ', h, ' ・ ', m, ' ・ ', s].map(v => v.toString().padStart(2, 0)).join('') 
 } 
-*/
