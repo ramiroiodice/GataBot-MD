@@ -4,7 +4,7 @@
   const tradutor = _translate.plugins.owner_add_del_owner
   
   const why = `PUEDE AGREGAR O ELIMINAR OWNERS DEL BOT DE ESTA FORMA:\n*${usedPrefix + command} @${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command} ${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command}*`;
-  const who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false;
+  const who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : true;
   if (!who) return conn.reply(m.chat, why, m, {mentions: [m.sender]});
   switch (command) {
     case 'addowner':
