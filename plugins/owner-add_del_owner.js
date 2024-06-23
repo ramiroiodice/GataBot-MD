@@ -1,7 +1,6 @@
   const handler = async (m, { conn, text, args, usedPrefix, command }) => {
   const datas = global
   const idioma = datas.db.data.user[m.sender].lenguage
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
   const tradutor = _translate.plugins.owner_add_del_owner
   
   const why = `PUEDE AGREGAR O ELIMINAR OWNERS DEL BOT DE ESTA FORMA:\n*${usedPrefix + command} @${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command} ${m.sender.split('@')[0]}*\n*◉ ${usedPrefix + command}*`;
