@@ -125,7 +125,7 @@ await conn.sendFile(m.chat, res, null, `${lenguajeGB['smsCont18Porn']()}\n${leng
 if (command == 'porno' || command == 'porn') {
 let res = (await axios.get(`https://raw.githubusercontent.com/ramiroiodice/GataBot-MD/master/src/JSON/porno.json`)).data  
 let enlace = await res[Math.floor(res.length * Math.random())]
-await conn.sendFile(m.chat, res, null, `${lenguajeGB['smsCont18Porn']()}\n${lenguajeGB['smsBotonM7']()} » ${user.premiumTime > 0 ? '✅' : '❌'}`, null, null, {viewOnce: false}, m)}
+await conn.sendFile(m.chat, res, null, `${lenguajeGB['smsCont18Porn']()}\n${lenguajeGB['smsBotonM7']()} » ${user.premiumTime > 0 ? '✅' : '❌'}`, null, null, {viewOnce: true}, m)}
 //await conn.sendButton(m.chat, lenguajeGB.smsCont18Porn(), ` *_${lenguajeGB['smsBotonM7']()}_* » ${user.premiumTime > 0 ? '✅' : '❌'}\n` + wm + ` : *${command[0].toUpperCase() + command.substring(1)}*`, enlace, [[lenguajeGB.smsSig(), `${usedPrefix + command}`], [`🥵 ${lenguajeGB.lenguaje() == 'es' ? 'porno 4k' : 'nsfws 4k'} 🥵`.toUpperCase(), `${usedPrefix}${lenguajeGB.lenguaje() == 'es' ? 'porno4k' : 'porn4k'}`]], m, frep)}
   
 if (command == 'pornorandom' || command == 'pornrandom') {
