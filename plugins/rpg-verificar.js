@@ -81,7 +81,7 @@ if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALT
 if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
 if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
 user.age = parseInt(_registro[1]) //_registro[1]	
-global.db.data.users[m.sender]['registroR'] = true
+global.db.data.users[m.sender]['registroR'] = false
 
 let registroRapido = ` *░ 📑 REGISTRO ACTUAL 📑 ░*
  *∷∷∷∷∷∷∷∷∷∷∷∷∷∷∷*
