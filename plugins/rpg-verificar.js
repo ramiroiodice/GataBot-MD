@@ -104,7 +104,7 @@ body: '🌟 Puede modificar su registro antes de finalizar',
 thumbnailUrl: pp, 
 sourceUrl: 'https://www.atom.bio/gatabot/',
 mediaType: 1,
-showAdAttribution: true,
+showAdAttribution: false,
 renderLargerThumbnail: true
 }}}, { quoted: fkontak })
 }
