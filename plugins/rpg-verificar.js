@@ -105,7 +105,7 @@ thumbnailUrl: pp,
 sourceUrl: 'https://www.atom.bio/gatabot/',
 mediaType: 1,
 showAdAttribution: false,
-renderLargerThumbnail: true
+renderLargerThumbnail: false
 }}}, { quoted: fkontak })
 }
 
