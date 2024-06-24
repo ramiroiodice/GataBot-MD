@@ -520,7 +520,7 @@ seleccionarPasatiempos(seleccion)
 }	
 	
 if (command == 'finalizar' || command == 'end') {
-if (global.db.data.users[m.sender]['registroC'] == false) {
+if (global.db.data.users[m.sender]['registroC'] == true) {
 if (user.premLimit === 0) {	
 tiempo = user.premLimit === 1 ? 0 : 36000000 //10 horas
 var now = new Date() * 1
